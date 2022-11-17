@@ -16,4 +16,9 @@ def my_func(lst):
     pass
 
 
-print(my_func([4, 6, 3, 2, 8, 1]))
+def main():
+    print(my_func([4, 6, 3, 2, 8, 1]))
+
+
+if __name__ == '__main__':
+    main()
