@@ -10,28 +10,22 @@ Time Complexity: O()
 
 def longestPalindrome(s):
     longest = s[0]
-    temp_longest = ""
     for i in range(0, len(s)-1):
-
         if s[i] == s[i+1]:
             count = 1
             while (i-count >= 0 and i+1+count < len(s)) and (s[i-count] == s[i+1+count]):
                 count += 1
             count -= 1
-            temp_longest = s[i-count: i+1+count + 1]
-
-        if len(temp_longest) > len(longest):
-            longest = temp_longest
+            longest = s[i-count: i+1+count +
+                        1] if (len(s[i-count: i+1+count + 1]) > len(longest)) else longest
 
         if s[i-1] == s[i+1]:
             count = 2
             while (i-count >= 0 and i+count < len(s)) and (s[i-count] == s[i+count]):
                 count += 1
             count -= 1
-            temp_longest = s[i-count: i+count + 1]
-
-        if len(temp_longest) > len(longest):
-            longest = temp_longest
+            longest = s[i-count: i+count +
+                        1] if (len(s[i-count: i+count + 1]) > len(longest)) else longest
 
     return longest
 
