@@ -37,14 +37,14 @@ def uniquePaths(m, n):
 
 
 def recursive(current_row, current_column, r, c):
-    printMaze(current_row, current_column, r, c)
     if current_row == r - 1 and current_column == c - 1:
         print("found")
         return 1
     elif current_row == r or current_column == c:
         return 0
     else:
-        return recursive(current_row + 1, current_column, r, c) + recursive(current_row, current_column + 1, r, c)
+        recursive(current_row + 1, current_column, r, c)
+        recursive(current_row, current_column + 1, r, c)
 
 
 def main():
